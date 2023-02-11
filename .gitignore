@@ -1,0 +1,5 @@
+/www/vendor/
+/www/.idea/
+/www/.phpunit*
+/www/*.log
+/www/composer.lock
