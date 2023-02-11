@@ -6,6 +6,7 @@ namespace Unit\Domain\Entity;
 
 use Core\Domain\Entity\Category;
 use Core\Domain\Exception\EntityValidationException;
+use Core\Domain\ValueObject\Uuid;
 use PHPUnit\Framework\TestCase;
 use Throwable;
 
@@ -15,7 +16,7 @@ class CategoryUniTest extends TestCase
     public function testAttibutes()
     {
         $category = new Category(
-            'New Cat',
+            '',
             'sdtfs',
             'New desc',
             true
@@ -55,7 +56,7 @@ class CategoryUniTest extends TestCase
 
     public function testUpdate()
     {
-        $uuid = 'uuid.value';
+        $uuid = (string) Uuid::random();
 
         $category = new Category(
             id: $uuid,
