@@ -92,13 +92,29 @@ class CategoryUniTest extends TestCase
         $this->assertEquals('desc', $category->description);
     }
 
-    public function testException()
+    public function testExceptionName()
     {
         try {
 
-            $category = new Category(
-                name: '',
+             new Category(
+                name: 'N',
                 description: 'desc',
+            );
+
+            $this->assertTrue(false);
+        }catch (Throwable $e){
+            $this->assertInstanceOf(EntityValidationException::class,$e);
+        }
+
+    }
+
+    public function testExceptionDescription()
+    {
+        try {
+
+             new Category(
+                name: 'N',
+                description: random_bytes(99999),
             );
 
             $this->assertTrue(false);

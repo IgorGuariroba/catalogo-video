@@ -25,7 +25,7 @@ class DomainValidation
         }
     }
 
-    public static function strMinLength(string $value, int $length = 1, string $exceptMessage = null)
+    public static function strMinLength(string $value, int $length = 2, string $exceptMessage = null)
     {
         if (strlen($value) < $length) {
             throw new EntityValidationException(
@@ -34,7 +34,7 @@ class DomainValidation
         }
     }
 
-    public static function strCanNullAndMaxLength(string $value = '', int $length = 1, string $exceptMessage = null)
+    public static function strCanNullAndMaxLength(string $value = '', int $length = 255, string $exceptMessage = null)
     {
         if (!empty($value) && strlen($value) > $length) {
             throw new EntityValidationException(

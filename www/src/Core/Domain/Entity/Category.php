@@ -6,6 +6,7 @@ namespace Core\Domain\Entity;
 
 use Core\Domain\Exception\EntityValidationException;
 use Core\Domain\Traits\MethodsMagicsTrait;
+use Core\Domain\Validation\DomainValidation;
 
 class Category
 {
@@ -42,18 +43,11 @@ class Category
 
     public function validate()
     {
-        if(empty($this->name)){
-            throw new EntityValidationException("Nome informado não preenche os requisitos");
-        }
-
-        if(strlen($this->name) >= 255 || strlen($this->name) <= 2){
-            throw new EntityValidationException("A descrição não preenche os requisitos");
-        }
-
-        if(!empty($this->description) && (strlen($this->description) >= 255 || strlen($this->description) <= 5)){
-            throw new EntityValidationException("A descrição não preenche os requisitos");
-        }
-
+        DomainValidation::notNull($this->name);
+        DomainValidation::strMaxLength($this->name);
+        DomainValidation::strMinLength($this->name);
+        DomainValidation::strCanNullAndMaxLength($this->description);
+        DomainValidation::strMinLength($this->name);
     }
 
 }
