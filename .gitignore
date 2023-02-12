@@ -5,3 +5,4 @@
 /www/composer.lockwww/.idea/php.xml
 www/.idea/www.iml
 www/.phpunit.result.cache
+www/composer.lock
