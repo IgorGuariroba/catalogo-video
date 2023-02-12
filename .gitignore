@@ -2,4 +2,6 @@
 /www/.idea/
 /www/.phpunit*
 /www/*.log
-/www/composer.lock
+/www/composer.lockwww/.idea/php.xml
+www/.idea/www.iml
+www/.phpunit.result.cache
