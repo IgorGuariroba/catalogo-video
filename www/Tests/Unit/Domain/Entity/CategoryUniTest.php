@@ -56,7 +56,7 @@ class CategoryUniTest extends TestCase
 
     public function testUpdate()
     {
-        $uuid = (string) Uuid::random();
+        $uuid = Uuid::random();
 
         $category = new Category(
             id: $uuid,
@@ -76,7 +76,7 @@ class CategoryUniTest extends TestCase
 
     public function testUpdateIssetDesc()
     {
-        $uuid = 'uuid.value';
+        $uuid = Uuid::random();
 
         $category = new Category(
             id: $uuid,
